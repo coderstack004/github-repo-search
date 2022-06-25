@@ -1,7 +1,7 @@
 import telebot
 import requests
 
-bot = telebot.TeleBot("5191410493:AAH-Foos-YyVYlPIMhsQNmpX7EEkphUvwT0")
+bot = telebot.TeleBot("5498935746:AAGLddOeFFMf5XcJmeY9FaA4jJslammxoiY")
 
 users = 0
 added = None
