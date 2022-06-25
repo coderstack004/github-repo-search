@@ -26,9 +26,12 @@ def send_welcome(message):
 
 @bot.message_handler()
 def search(message):
-    response = requests.get(f'https://api.github.com/search/repositories?q={message.text}&per_page=80')
-    for i in response.json()['items']:
-        bot.send_message(message.chat.id, f'{i["html_url"]}\n{i["description"]}')
+    try:
+        response = requests.get(f'https://api.github.com/search/repositories?q={message.text}&per_page=80')
+        for i in response.json()['items']:
+            bot.send_message(message.chat.id, f'{i["html_url"]}\n{i["description"]}')
+    except:
+        bot.send_message(message.chat.id, 'Такой репозиторий не найден!')
 
 if __name__ == "__main__":
     bot.polling()
